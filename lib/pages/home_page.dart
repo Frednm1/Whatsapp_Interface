@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_interface/pages/widgets/main_menu_bar.dart';
-import '../pages/widgets/main_menu_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,17 +28,40 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        bottom: const TabBar(
+        bottom: TabBar(
           tabs: [
             Tab(
-              child: Text(
-                'conversas',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              child: Row(
+                children: [
+                  Text(
+                    'Conversas',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Colors.white,
+                    ),
+                    width: 20,
+                    height: 20,
+                    child: const Padding(
+                      padding: EdgeInsets.all(3),
+                      child: Text(
+                        '28',
+                        style: TextStyle(
+                          color: Color.fromRGBO(18, 140, 126, 1),
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Tab(
               child: Text(
-                'status',
+                'Status',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
             ),
