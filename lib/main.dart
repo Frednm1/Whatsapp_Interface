@@ -21,7 +21,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: const HomePage(),
+      home: const DefaultTabController(
+        length: 3,
+        child: HomePage(),
+      ),
     );
   }
 }
