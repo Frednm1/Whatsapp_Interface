@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_interface/pages/widgets/first_status.dart';
+
+import 'widgets/chats.dart';
+import 'widgets/status.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,7 +26,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
         title: const Text(
-          'WhatsApp',
+          'WHATSAPP',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -32,10 +36,11 @@ class HomePage extends StatelessWidget {
           tabs: [
             Tab(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Conversas',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    'CONVERSAS',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
@@ -43,15 +48,15 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(100),
                       color: Colors.white,
                     ),
-                    width: 20,
-                    height: 20,
+                    width: 16,
+                    height: 16,
                     child: const Padding(
-                      padding: EdgeInsets.all(3),
+                      padding: EdgeInsets.fromLTRB(2, 1.75, 0, 0),
                       child: Text(
                         '28',
                         style: TextStyle(
                           color: Color.fromRGBO(18, 140, 126, 1),
-                          fontSize: 12,
+                          fontSize: 10,
                         ),
                       ),
                     ),
@@ -60,15 +65,29 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Tab(
-              child: Text(
-                'Status',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'STATUS',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Colors.white,
+                    ),
+                    width: 10,
+                    height: 10,
+                  ),
+                ],
               ),
             ),
-            Tab(
+            const Tab(
               child: Text(
-                'Chamadas',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                'CHAMADAS',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               ),
             ),
           ],
@@ -78,13 +97,57 @@ class HomePage extends StatelessWidget {
           indicatorColor: Colors.white,
         ),
       ),
-      body: const TabBarView(
+      body: TabBarView(
         children: [
-          Center(
-            child: Text('pag 1'),
+          Container(
+            decoration: BoxDecoration(
+                border: Border.all(
+              color: Colors.black,
+              width: 1,
+            )),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Chats('Ana vitória'),
+                  Chats('Tiago'),
+                  Chats('João'),
+                  Chats('Felipe'),
+                  Chats('Ana vitória'),
+                  Chats('Tiago'),
+                  Chats('João'),
+                  Chats('Felipe'),
+                ],
+              ),
+            ),
           ),
-          Center(
-            child: Text('pag 2'),
+          Container(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const FirstStatus(),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Recent Updates',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  Status('Ana Vitória'),
+                  Status('Tiago'),
+                  Status('João'),
+                  Status('Felipe'),
+                  Status('Ana vitória'),
+                  Status('Tiago'),
+                  Status('João'),
+                  Status('Felipe'),
+                ],
+              ),
+            ),
           ),
           Center(
             child: Text('pag 3'),
