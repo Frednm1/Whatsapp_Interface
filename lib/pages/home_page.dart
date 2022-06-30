@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_interface/pages/widgets/calls.dart';
 import 'package:whatsapp_interface/pages/widgets/first_status.dart';
 
 import 'widgets/chats.dart';
@@ -100,11 +101,6 @@ class HomePage extends StatelessWidget {
       body: TabBarView(
         children: [
           Container(
-            decoration: BoxDecoration(
-                border: Border.all(
-              color: Colors.black,
-              width: 1,
-            )),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -150,7 +146,11 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Center(
-            child: Text('pag 3'),
+            child: Column(
+              children: [
+                Calls('Ana Vitória', true),
+              ],
+            ),
           ),
         ],
       ),
