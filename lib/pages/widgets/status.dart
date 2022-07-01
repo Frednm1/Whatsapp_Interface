@@ -9,7 +9,7 @@ class Status extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 80,
+      height: 70,
       child: Row(
         children: [
           const Padding(
@@ -19,7 +19,7 @@ class Status extends StatelessWidget {
               foregroundColor: Colors.grey,
               radius: 20,
               backgroundImage: NetworkImage(
-                'https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHUvOd8Q-VihyupbJCdgjIR2FxnjGtAgMu3g&usqp=CAU',
               ),
             ),
           ),

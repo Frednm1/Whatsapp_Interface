@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 class Calls extends StatelessWidget {
   // const Chats({Key? key}) : super(key: key);
-  Calls(this.name, this.call);
+  Calls(this.name, this.call, this.videoCall);
   String name;
   bool call;
+  bool videoCall;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 80,
+      height: 70,
       child: Row(
         children: [
           const Padding(
@@ -19,7 +20,7 @@ class Calls extends StatelessWidget {
               foregroundColor: Colors.grey,
               radius: 20,
               backgroundImage: NetworkImage(
-                'https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHUvOd8Q-VihyupbJCdgjIR2FxnjGtAgMu3g&usqp=CAU',
               ),
             ),
           ),
@@ -36,15 +37,44 @@ class Calls extends StatelessWidget {
                   ),
                 ),
                 call
-                    ? const Icon(Icons.call_made_rounded)
-                    : const Icon(Icons.call_received),
-                const Text(
-                  '20 minutes ago',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
-                ),
+                    ? Row(
+                        children: const [
+                          Icon(
+                            Icons.call_made_rounded,
+                            color: Color.fromRGBO(18, 140, 126, 1),
+                            size: 14,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(4.0),
+                            child: Text(
+                              'july 01 2022 at 20:34',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black54,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Row(
+                        children: const [
+                          Icon(
+                            Icons.call_received,
+                            color: Colors.red,
+                            size: 14,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(4.0),
+                            child: Text(
+                              'july 01 2022 at 20:34',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black54,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
               ],
             ),
           ),
@@ -53,7 +83,10 @@ class Calls extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: Icon(Icons.phone),
+                child: Icon(
+                  videoCall ? Icons.phone : Icons.videocam_rounded,
+                  color: const Color.fromRGBO(18, 140, 126, 1),
+                ),
               ),
             ],
           ),

@@ -7,11 +7,11 @@ class FirstStatus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 80,
+      height: 75,
       child: Row(
         children: [
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Stack(
               children: const [
                 CircleAvatar(
@@ -19,14 +19,18 @@ class FirstStatus extends StatelessWidget {
                   foregroundColor: Colors.grey,
                   radius: 20,
                   backgroundImage: NetworkImage(
-                    'https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png',
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHUvOd8Q-VihyupbJCdgjIR2FxnjGtAgMu3g&usqp=CAU',
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Icon(
-                    Icons.add,
-                    color: Color.fromRGBO(18, 140, 126, 1),
+                  padding: EdgeInsets.all(0),
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                    child: Icon(
+                      Icons.add_circle_sharp,
+                      color: Color.fromRGBO(18, 140, 126, 1),
+                      size: 22,
+                    ),
                   ),
                 )
               ],
