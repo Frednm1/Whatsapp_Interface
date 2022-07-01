@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Status extends StatelessWidget {
   // const Chats({Key? key}) : super(key: key);
-  Status(this.name);
+  Status(this.name, {Key? key}) : super(key: key);
   String name;
 
   @override
