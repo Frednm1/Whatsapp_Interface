@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_interface/pages/widgets/calls.dart';
-import 'package:whatsapp_interface/pages/widgets/first_status.dart';
-
+import 'widgets/calls.dart';
+import 'widgets/first_status.dart';
 import 'widgets/chats.dart';
 import 'widgets/status.dart';
+import 'widgets/popUpMenu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,14 +20,136 @@ class HomePage extends StatelessWidget {
             icon: const Icon(Icons.search),
             color: Colors.white,
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.more_vert_rounded),
+          PopupMenuButton<int>(
+            icon: const Icon(
+              Icons.more_vert,
+              color: Colors.white,
+            ),
+            itemBuilder: (context) => [
+              // popupmenu item 1
+              PopupMenuItem(
+                value: 1,
+                // row has two child icon and text.
+                child: Row(
+                  children: const [
+                    // Icon(Icons.more_vert),
+                    SizedBox(
+                      // sized box with width 10
+                      width: 10,
+                    ),
+                    Text(
+                      "New Group",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 2,
+                // row has two child icon and text.
+                child: Row(
+                  children: const [
+                    // Icon(Icons.more_vert),
+                    SizedBox(
+                      // sized box with width 10
+                      width: 10,
+                    ),
+                    Text(
+                      "New Transmition",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 3,
+                // row has two child icon and text.
+                child: Row(
+                  children: const [
+                    // Icon(Icons.more_vert),
+                    SizedBox(
+                      // sized box with width 10
+                      width: 10,
+                    ),
+                    Text(
+                      "Conected Devices",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 4,
+                // row has two child icon and text.
+                child: Row(
+                  children: const [
+                    // Icon(Icons.more_vert),
+                    SizedBox(
+                      // sized box with width 10
+                      width: 10,
+                    ),
+                    Text(
+                      "Favorite Menssages",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 5,
+                // row has two child icon and text.
+                child: Row(
+                  children: const [
+                    // Icon(Icons.more_vert),
+                    SizedBox(
+                      // sized box with width 10
+                      width: 10,
+                    ),
+                    Text(
+                      "Payments",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 6,
+                // row has two child icon and text.
+                child: Row(
+                  children: const [
+                    // Icon(Icons.more_vert),
+                    SizedBox(
+                      // sized box with width 10
+                      width: 10,
+                    ),
+                    Text(
+                      "Settings",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // popupmenu item
+            ],
+            offset: const Offset(0, 0),
             color: Colors.white,
+            elevation: 5,
           ),
         ],
         title: const Text(
-          'WHATSAPP',
+          'WhatApp',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -39,12 +161,12 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'CONVERSAS',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                    margin: const EdgeInsets.fromLTRB(5, 0, 0, 0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: Colors.white,
@@ -74,13 +196,13 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                    margin: const EdgeInsets.fromLTRB(5, 0, 0, 0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: Colors.white,
                     ),
-                    width: 10,
-                    height: 10,
+                    width: 8,
+                    height: 8,
                   ),
                 ],
               ),
@@ -104,14 +226,22 @@ class HomePage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Chats('Ana vitória'),
-                  Chats('Tiago'),
-                  Chats('João'),
-                  Chats('Felipe'),
-                  Chats('Ana vitória'),
-                  Chats('Tiago'),
-                  Chats('João'),
-                  Chats('Felipe'),
+                  Chats('Ana vitória', true),
+                  Chats('Guilous', true),
+                  Chats('Bingous', true),
+                  Chats('Hlolo', true),
+                  Chats('Vlolo', true),
+                  Chats('Laura', true),
+                  Chats('Na Clara', true),
+                  Chats('Cuxtela', true),
+                  Chats('Ana vitória', true),
+                  Chats('Tiago', true),
+                  Chats('João', true),
+                  Chats('Felipe', true),
+                  Chats('Ana vitória', true),
+                  Chats('Tiago', true),
+                  Chats('João', true),
+                  Chats('Felipe', true),
                 ],
               ),
             ),
@@ -133,11 +263,21 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Status('Ana Vitória'),
-                  Status('Tiago'),
-                  Status('João'),
-                  Status('Felipe'),
                   Status('Ana vitória'),
+                  Status('Guilous'),
+                  Status('Bingous'),
+                  Status('Hlolo'),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'muted updates',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                   Status('Tiago'),
                   Status('João'),
                   Status('Felipe'),
@@ -146,14 +286,30 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Center(
-            child: Column(
-              children: [
-                Calls('Ana Vitória', true),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Calls('Bingous', true, true),
+                  Calls('Guilous', false, false),
+                  Calls('Bingous', true, false),
+                  Calls('Guilous', false, false),
+                  Calls('Bingous', true, true),
+                  Calls('Guilous', false, true),
+                  Calls('Bingous', true, false),
+                  Calls('Guilous', false, false),
+                  Calls('Guilous', false, true),
+                  Calls('Bingous', true, false),
+                  Calls('Guilous', false, false),
+                ],
+              ),
             ),
           ),
         ],
       ),
     );
   }
+}
+
+void choiceAction(String choice) {
+  print('working');
 }
