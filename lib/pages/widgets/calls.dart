@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Calls extends StatelessWidget {
   // const Chats({Key? key}) : super(key: key);
-  Calls(this.name, this.call, this.videoCall);
+  Calls(this.name, this.call, this.videoCall, {Key? key}) : super(key: key);
   String name;
   bool call;
   bool videoCall;
