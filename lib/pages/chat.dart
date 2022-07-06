@@ -220,9 +220,12 @@ class Chat extends StatelessWidget {
                         ),
                         height: 42,
                         width: 42,
-                        child: const Icon(
-                          Icons.mic,
-                          color: Colors.white,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.mic,
+                            color: Colors.white,
+                          ),
                         ),
                       )
                     ],
