@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_interface/pages/chat.dart';
 import '../chat.dart';
 
 class Chats extends StatelessWidget {
   // const Chats({Key? key}) : super(key: key);
-  Chats(this.name, this.notification, {Key? key}) : super(key: key);
-  String name;
-  bool notification;
+  Chats(this.userName, this.notification, {Key? key}) : super(key: key);
+  final String userName;
+  final bool notification;
   _showPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return Chat();
+          return Chat(userName);
         },
       ),
     );
@@ -43,7 +42,7 @@ class Chats extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    userName,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,

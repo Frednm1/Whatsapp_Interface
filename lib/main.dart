@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Whatapp theme inspiration',
       theme: ThemeData(
         primarySwatch: Colors.grey,
+        primaryColor: const Color.fromRGBO(18, 140, 126, 1),
       ),
       home: const DefaultTabController(
         length: 3,

@@ -12,10 +12,12 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(18, 140, 126, 1),
+          backgroundColor: Theme.of(context).primaryColor,
           elevation: 0,
           titleTextStyle: const TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
           ),
           toolbarTextStyle: const TextStyle(
             color: Colors.green,
@@ -154,11 +156,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
           title: const Text(
-            'WhatApp',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+            'WhatsApp',
           ),
           bottom: TabBar(
             tabs: [
