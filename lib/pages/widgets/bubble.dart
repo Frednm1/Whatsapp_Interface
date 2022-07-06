@@ -35,7 +35,7 @@ class BubbleSpecialThree extends StatelessWidget {
       stateTick = true;
       stateIcon = const Icon(
         Icons.done,
-        size: 14,
+        size: 15,
         color: Color(0xFF97AD8E),
       );
     }
@@ -43,7 +43,7 @@ class BubbleSpecialThree extends StatelessWidget {
       stateTick = true;
       stateIcon = const Icon(
         Icons.done_all,
-        size: 14,
+        size: 15,
         color: Color(0xFF97AD8E),
       );
     }
@@ -51,7 +51,7 @@ class BubbleSpecialThree extends StatelessWidget {
       stateTick = true;
       stateIcon = const Icon(
         Icons.done_all,
-        size: 14,
+        size: 15,
         color: Color(0xFF92DEDA),
       );
     }

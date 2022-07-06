@@ -5,7 +5,8 @@ class Chats extends StatelessWidget {
   // const Chats({Key? key}) : super(key: key);
   Chats(this.userName, this.notification, {Key? key}) : super(key: key);
   final String userName;
-  final bool notification;
+  final int notification;
+
   _showPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
@@ -69,30 +70,34 @@ class Chats extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
-                  Stack(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(0, 2, 0, 0),
-                        width: 20,
-                        height: 20,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: const Color.fromARGB(255, 48, 200, 63),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(6, 5, 0, 0),
-                        child: const Text(
-                          '5',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
+                  notification != 0
+                      ? Stack(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(0, 2, 0, 0),
+                              width: 20,
+                              height: 20,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: const Color.fromARGB(255, 48, 200, 63),
+                              ),
+                            ),
+                            Container(
+                              margin: notification <= 9
+                                  ? EdgeInsets.fromLTRB(6, 5, 0, 0)
+                                  : EdgeInsets.fromLTRB(3, 5, 0, 0),
+                              child: Text(
+                                notification.toString(),
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : Container(),
                 ],
               ),
             ),

@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.fromLTRB(2, 1.75, 0, 0),
                         child: Text(
-                          '28',
+                          '13',
                           style: TextStyle(
                             color: Color.fromRGBO(18, 140, 126, 1),
                             fontSize: 10,
@@ -231,22 +231,23 @@ class HomePage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Chats('Ana vitória', true),
-                    Chats('Guilous', true),
-                    Chats('Bingous', true),
-                    Chats('Hlolo', true),
-                    Chats('Vlolo', true),
-                    Chats('Laura', true),
-                    Chats('Na Clara', true),
-                    Chats('Cuxtela', true),
-                    Chats('Ana vitória', true),
-                    Chats('Tiago', true),
-                    Chats('João', true),
-                    Chats('Felipe', true),
-                    Chats('Ana vitória', true),
-                    Chats('Tiago', true),
-                    Chats('João', true),
-                    Chats('Felipe', true),
+                    Chats('Ana vitória', 1),
+                    Chats('Guilherme', 2),
+                    Chats('Tiago ', 23),
+                    Chats('Daniel', 0),
+                    Chats('Heitor', 0),
+                    Chats('Laura', 3),
+                    Chats('Ana Clara', 7),
+                    Chats('Diego', 12),
+                    Chats('Ana vitória', 67),
+                    Chats('Guilherme', 3),
+                    Chats('Tiago ', 4),
+                    Chats('Daniel', 2),
+                    Chats('Heitor', 0),
+                    Chats('Laura', 3),
+                    Chats('Ana Clara', 1),
+                    Chats('Diego', 1),
+                    Chats('Xavier', 0),
                   ],
                 ),
               ),
@@ -269,9 +270,9 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Status('Ana vitória'),
-                    Status('Guilous'),
-                    Status('Bingous'),
-                    Status('Hlolo'),
+                    Status('Guilherme'),
+                    Status('Nicolas'),
+                    Status('Heitor'),
                     const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
@@ -314,8 +315,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-}
-
-void choiceAction(String choice) {
-  print('working');
 }
